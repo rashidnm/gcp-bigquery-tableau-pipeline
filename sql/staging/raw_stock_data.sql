@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `your-project-id.stock_market_data.raw_stock_data` (
+CREATE OR REPLACE TABLE `my-data-portfolio-481622.stock_market_data.raw_stock_data` (
   trade_date DATE,
   ticker STRING,
   open_price FLOAT64,
