@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `your-project.your_dataset.gold_stock_metrics`
+CREATE OR REPLACE TABLE `my-data-portfolio-481622.stock_market_data.gold_stock_metrics`
 PARTITION BY DATE(trade_date)
 CLUSTER BY ticker AS
 
@@ -15,7 +15,7 @@ WITH daily_calculations AS (
     -- 7-Day Moving Average for Trend Lines
     AVG(Close) OVER (ORDER BY Date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d
   FROM 
-    `your-project.your_dataset.raw_stock_data`
+    `my-data-portfolio-481622.stock_market_data.raw_stock_data`
 )
 
 SELECT
@@ -31,3 +31,4 @@ FROM
   daily_calculations
 WHERE 
   trade_date IS NOT NULL;
+
